@@ -1,0 +1,62 @@
+<html>
+<body style="text-align: center;">
+ 
+    <h1 style="color: fuchsia">
+        Aaron's Word Counter
+    </h1>
+ 
+     
+<i>
+<p>
+  Type in the text-box click button to count words !
+</p>
+</i>    
+
+ 
+ 
+ 
+    <textarea id="inputField" rows=10 cols="50">
+    </textarea>
+    <br><br>
+ 
+    <button onclick="counter()"> 
+        Count Words
+    </button>
+    <br><br>
+ 
+     
+<p> Words Inputed By User:
+        <span id="show">0</span>
+    </p>
+ 
+ 
+ 
+    <script>
+        function counter() {
+ 
+            var txt = document
+                .getElementById("inputField").value;
+ 
+            // Initialize word counter
+            var count = 0;
+ 
+            // Counts the spaces between words and counts it as words.
+            for (var i = 0; i < txt.length; i++) {
+                var cur = txt[i];
+ 
+                // Check if the character is a space if it is it will then add 1.
+                if (cur == " ") {
+                    count += 1;
+                }
+            }
+ 
+            // Adds 1 to count that will be displayed to user..
+            count += 1;
+ 
+            // Shows output.
+            document.getElementById("show")
+                .innerHTML = count;
+        }
+    </script>
+</body>
+</html>
